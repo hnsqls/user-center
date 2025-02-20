@@ -12,6 +12,7 @@
           v-model:selectedKeys="current"
           mode="horizontal"
           :items="items"
+          @click="doMenuClick"
         />
       </a-col>
       <a-col flex="100px">
@@ -26,6 +27,9 @@
 import { h, ref } from "vue";
 import { HomeOutlined, CrownOutlined } from "@ant-design/icons-vue";
 import { MenuProps } from "ant-design-vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const current = ref<string[]>(["mail"]);
 const items = ref<MenuProps["items"]>([
   {
@@ -47,7 +51,7 @@ const items = ref<MenuProps["items"]>([
     title: "用户注册",
   },
   {
-    key: "/admin/userManger",
+    key: "/user/admin",
     icon: () => h(CrownOutlined),
     label: "用户管理",
     title: "用户管理",
@@ -62,6 +66,19 @@ const items = ref<MenuProps["items"]>([
     title: "Navigation Four - Link",
   },
 ]);
+
+//更新路由
+router.afterEach((to, from) => {
+  // to and from are both route objects.
+  current.value = [to.path];
+});
+// 路由跳转
+
+const doMenuClick = ({ key }: { key: string }) => {
+  router.push({
+    path: key,
+  });
+};
 </script>
 <style>
 #globalTitle {
