@@ -1,27 +1,29 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
+import HomePage from "@/pages/HomePage.vue";
+import LoginPage from "@/pages/user/LoginPage.vue";
+import RegisterPage from "@/pages/user/RegisterPage.vue";
+import ManagerPage from "@/pages/admin/ManagerPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
-    component: HomeView,
+    component: HomePage,
   },
   {
     path: "/user/login",
     name: "login",
-    component: HomeView,
+    component: LoginPage,
   },
   {
     path: "/user/register",
     name: "register",
-    component: HomeView,
+    component: RegisterPage,
   },
   {
-    path: "/user/admin",
+    path: "/admin/manager",
     name: "admin",
-    component: HomeView,
+    component: ManagerPage,
   },
   {
     path: "/about",

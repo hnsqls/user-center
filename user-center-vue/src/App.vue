@@ -12,5 +12,4 @@ import { useLoginUserStore } from "@/store/useLoginUserStore";
 
 const loginUserStore = useLoginUserStore();
 loginUserStore.fetchLoginUser();
-
 </script>
