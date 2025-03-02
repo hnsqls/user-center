@@ -57,11 +57,20 @@ const items = ref<MenuProps["items"]>([
     title: "用户管理",
   },
   {
-    key: "alipay",
+    key: "about",
     label: h(
       "a",
       { href: "https://github.com/hnsqls", target: "_blank" },
       "关于作者"
+    ),
+    title: "Navigation Four - Link",
+  },
+  {
+    key: "aboutProject",
+    label: h(
+      "a",
+      { href: "https://github.com/hnsqls/user-center", target: "_blank" },
+      "关于项目"
     ),
     title: "Navigation Four - Link",
   },
